@@ -1,5 +1,4 @@
-from graphviz import Digraph #pip3 install graphviz required
-import queue
+from graphviz import Digraph 
 
 INF = 99999
 
@@ -43,8 +42,6 @@ def display_dict(dist):
                 print("From " + i + " to " + n + " are " + str(dist[i][n]) + " people")
 
 def floyd_warshall(graph):
-    s = set()
-    q = queue.Queue()
     V = graph.nodes.keys()
     dist = {}
 
@@ -70,7 +67,7 @@ if __name__ == '__main__':
     
     n = 7
     for i in range(n):
-        f = open("data" + str(i) + ".txt", "r")
+        f = open("./data/" + "data" + str(i) + ".txt", "r")
         print(f)
         temp = [x.strip("\n") for x in f.readlines()]
         current = temp[0]  # First name in the file indicates who's most messaged people we're retrieving
